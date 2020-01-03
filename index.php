@@ -23,7 +23,30 @@ if(isset($_POST['submit'])){
 		$result = mysqli_query($conn, $sql);
 		if($result)
 		{
-			echo "Deine Registrierung wurde erfolgreich abgeschlossen!<br>";
+			echo "
+				<!DOCTYPE html>
+				<html lang='de-DE'>
+				<head>
+					<meta charset='utf-8'>
+					<title>CRYPT BLOWFISH | Register</title>
+					<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+					<!-- Stylesheet -->
+					<link href='css/style.css' rel='stylesheet'>
+					<link href='https://fonts.googleapis.com/css?family=Heebo:700' rel='stylesheet' type='text/css'>
+					<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+				</head>
+				<body>
+					<div>
+						<form id='blowfish-contact' class='blowfish-contact'>
+							<div class='row'>
+								<div class='col-sm-8'>
+									<h1>Registrierung abgeschlossen!</h1>
+								</div>
+							</div>
+						</form>		
+					</div>
+				</body>
+				</html>";
 		}
 		$sql2 = "insert into characters (commandName, ingameName) value('".$commandName."', '".$ingameName."')";
 		$result2 = mysqli_query($conn, $sql2);
